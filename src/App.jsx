@@ -10,13 +10,21 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<NavBar />}>
-          <Route index element={<Index />} />
-          <Route path="create-prompt" element={<CreatePrompt />} />
-          <Route path="execute-prompt" element={<ExecutePrompt />} />
-          <Route path="rate-response" element={<RateResponse />} />
-          <Route path="dashboard" element={<Dashboard />} />
-        </Route>
+        <Route
+          path="/"
+          element={
+            <>
+              <NavBar />
+              <Routes>
+                <Route index element={<Index />} />
+                <Route path="create-prompt" element={<CreatePrompt />} />
+                <Route path="execute-prompt" element={<ExecutePrompt />} />
+                <Route path="rate-response" element={<RateResponse />} />
+                <Route path="dashboard" element={<Dashboard />} />
+              </Routes>
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
